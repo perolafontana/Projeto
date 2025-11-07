@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Representante</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#1e1e2f] text-white font-sans">
+
+  <!-- Top bar -->
+  <header class="flex justify-between items-center px-6 py-4 bg-[#2a2a3d] border-b border-gray-700 shadow">
+    <div class="flex items-center space-x-4">
+      <button class="text-white focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hover:text-gray-300 transition" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <h1 class="text-xl font-bold tracking-wide">UseCloud</h1>
+    </div>
+    <div class="flex items-center space-x-2">
+      <span class="text-sm font-medium">Olá Paulo F.</span>
+      <span class="text-xs bg-blue-600 px-2 py-1 rounded-full">Desenvolvedor</span>
+    </div>
+  </header>
+
+  <!-- Título -->
+
+
+  <div style="display: flex; align-items: center;">
+    <img src="../src/pessoa.jpg.png" alt="Descrição" style="width: 30px; height: auto; margin-right: 16px;">
+    <p class="font-bold text-white text-xl">Gerenciamento de Representantes</p>
+  </div>
+
+
+  <a href="index.html">
+    <button class="bg-blue-600 hover:bg-blue-700 text-white rounded-md text-xs font-medium shadow flex px-3 py-1">Voltar
+      para os representantes</button>
+  </a>
+  </section>
+
+  <!-- Resumo de Vendas -->
+  <!-- Seção Identificação -->
+  <section class="px-6 py-4 bg-[#1e1e2f] text-white">
+    <!-- Título -->
+    <div class="flex items-center gap-2 mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+      <h2 class="text-xl font-semibold">Identificação</h2>
+    </div>
+
+    <!-- Campos abaixo do título -->
+    <div class="flex items-start gap-6">
+      <!-- Campo Código -->
+      <div class="flex flex-col w-[100px]">
+        <label for="codigo" class="text-sm font-medium mb-1">Código</label>
+        <input type="text" placeholder="4"
+          class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+      </div>
+
+      <!-- Campo Pessoa -->
+      <div class="flex flex-col w-[180px]">
+        <label for="pessoa" class="text-sm font-medium mb-1">Pessoa</label>
+        <select id="pessoa" class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+          <option value="juridica" selected>Jurídica</option>
+          <option value="fisica">Física</option>
+        </select>
+      </div>
+
+      <!-- Campo CNPJ -->
+      <div class="flex flex-col w-[220px]">
+        <label for="cnpj" class="text-sm font-medium mb-1">CNPJ</label>
+        <input type="text" placeholder="27.865.737/0001-02"
+          class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+      </div>
+
+      <div class="flex flex-col w-[220px]">
+        <label for="ie" class="text-sm font-medium mb-1">Inscrição Estadual</label>
+        <input type="text" placeholder="Inscrição Estadual"
+          class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+      </div>
+
+      <div class="flex flex-col w-[220px]">
+        <label for="nr" class="text-sm font-medium mb-1">Nível do Representante</label>
+        <select id="nr" class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+          <option value="representante">Representante</option>
+          <option value="junior">Júnior</option>
+          <option value="pleno">Pleno</option>
+          <option value="sênior">Sênior</option>
+          <option value="master">Master</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col w-[220px]">
+        <label for="telefone" class="text-sm font-medium text-white mb-1">Telefone</label>
+        <input id="telefone" type="text" placeholder="(21) 2155-4552"
+          class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Razão Social -->
+      <div class="flex flex-col w-[600px]">
+        <label for="razao" class="text-sm font-medium text-white mb-1">Razão Social</label>
+        <input id="razao" type="text" placeholder="GLOBO COMUNICAÇÃO E PARTICIPAÇÕES S.A"
+          class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-4 py-2 h-40px" />
+      </div>
+
+      <!-- Nome Fantasia -->
+      <div class="flex flex-col w-[600px]">
+        <label for="fantasia" class="text-sm font-medium text-white mb-1">Nome Fantasia</label>
+        <input id="fantasia" type="text" placeholder="TV/rede/globo.com/canais Globo/globoplay/eletromidia"
+          class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-4 py-2 h-40px" />
+      </div>
+    </div>
+
+    <!-- Observações -->
+    <div class="flex flex-col w-ful h-20">
+      <label for="obs" class="text-sm font-medium text-white mb-1">Obs</label>
+      <textarea id="obs" placeholder="Observações"
+        class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-4 py-2 h-80px resize-none w-full 2.5rem"></textarea>
+    </div>
+
+  </section>
+
+  <div class="h-px w-full bg-gray-600 my-4"></div>
+
+  <!-- Seção Informações Operacionais -->
+  <div class="grid grid-cols-2 gap-8">
+    <!-- Informações Operacionais -->
+    <div>
+      <h2 class="text-white text-lg font-semibold mb-4 text-left">Informações Operacionais</h2>
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Pasta Layout -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Pasta Layout</label>
+          <input type="text" placeholder="Pasta Layout"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Fornecedor -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Fornecedor</label>
+          <select id="fornecedor" class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option value="comercio" selected>Comércio</option>
+            <option value="materiais">Materiais</option>
+            <option value="Comunicação">Comunicação</option>
+          </select>
+        </div>
+
+        <!-- P.C. -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">P.C.</label>
+          <input type="text" placeholder="P.C %"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Comissão Por -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Comissão Por</label>
+          <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option selected>Representante</option>
+            <option>Faturamento</option>
+            <option>Recebimento</option>
+          </select>
+        </div>
+
+        <!-- Volume Vendas -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Volume Vendas</label>
+          <input type="text" placeholder="Volume Vendas"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Margem Vendas -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Margem Vendas</label>
+          <input type="text" placeholder="Margem Vendas"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Configuração de Comissão -->
+    <div>
+      <h2 class="text-white text-lg font-semibold mb-4 text-left">Configuração de Comissão</h2>
+      <div class="grid grid-cols-2 gap-6">
+        <!-- Gera Comissão -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Gera Comissão</label>
+          <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option selected>NÃO</option>
+            <option>SIM</option>
+          </select>
+        </div>
+
+        <!-- Tipo Comissão -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Tipo Comissão</label>
+          <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option selected>RECORRENTE</option>
+            <option>RECEBIMENTO</option>
+          </select>
+        </div>
+
+        <!-- Status da Venda (B2B) -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Bônus de Venda (BV)</label>
+          <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option selected>NÃO</option>
+            <option>SIM</option>
+          </select>
+        </div>
+
+        <!-- Vencimento da Comissão -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Vencimento da Comissão</label>
+          <select id="vc" class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option value="dt">Data de Faturamento</option>
+            <option value="dr">Data de Recebimento </option>
+            <option value="dl">Data de Liquidação </option>
+            <option value="vf">Vencimento Fixo (dia X do mês seguinte)</option>
+            <option value="rç">Reprogramar para a data de liquidação</option>
+            <option value="ap">Após aprovação da venda</option>
+          </select>
+        </div>
+
+        <!-- Dia Vencimento Mês -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Dia Vencimento Mês</label>
+          <input type="text" value="1"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Representante Interno -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Representante Interno</label>
+          <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option selected>SIM</option>
+            <option>NÃO</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="h-px w-full bg-gray-600 my-4"></div>
+  <div class="grid grid-cols-2 gap-8">
+    <!-- Dados Bancários -->
+    <div>
+      <h2 class="text-white text-lg font-semibold mb-4">Dados Bancários</h2>
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Banco -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Banco</label>
+          <input type="text" placeholder="Banco"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Agência -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Agência</label>
+          <input type="text" placeholder="Agência"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Conta Corrente -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Conta Corrente</label>
+          <input type="text" placeholder="Conta Corrente"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Banco 2 -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Banco</label>
+          <input type="text" placeholder="Banco"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Agência 2 -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Agência</label>
+          <input type="text" placeholder="Agência"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- Conta Corrente 2 -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Conta Corrente</label>
+          <input type="text" placeholder="Conta Corrente"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+
+        <!-- E-mail NF/Estatísticas -->
+        <div class="flex flex-col col-span-3">
+          <label class="text-sm text-white mb-1">E-mail NF/Estatísticas</label>
+          <input type="email" placeholder="E-mail NF/Estatísticas"
+            class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Container da seção Gestão -->
+    <div class="flex flex-col w-full">
+      <!-- Título -->
+      <h2 class="text-white text-lg font-semibold mb-4">Gestão</h2>
+
+      <!-- Campos em linha -->
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Gestor -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Gestor</label>
+          <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option selected>FENIX GESTOR</option>
+          </select>
+        </div>
+
+        <!-- Com Comissão -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">Com Comissão</label>
+          <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+            <option selected>NÃO</option>
+            <option>SIM</option>
+          </select>
+        </div>
+
+        <!-- % Comissão -->
+        <div class="flex flex-col">
+          <label class="text-sm text-white mb-1">% Comissão</label>
+          <input type="text" placeholder="% Comissão" disabled
+            class="bg-[#2a2a3d] text-gray-400 border border-gray-600 rounded px-3 py-2 h-40px" />
+        </div>
+      </div>
+
+      <!-- Container da seção Gestão -->
+      <div class="flex flex-col w-full">
+        <!-- Campos em linha -->
+        <div class="grid grid-cols-3 gap-6">
+          <!-- Gestor -->
+          <div class="flex flex-col">
+            <label class="text-sm text-white mb-1">Gestor</label>
+            <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+              <option selected>FENIX GESTOR</option>
+            </select>
+          </div>
+
+          <!-- Com Comissão -->
+          <div class="flex flex-col">
+            <label class="text-sm text-white mb-1">Com Comissão</label>
+            <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+              <option selected>NÃO</option>
+              <option>SIM</option>
+            </select>
+          </div>
+
+          <!-- % Comissão -->
+          <div class="flex flex-col">
+            <label class="text-sm text-white mb-1">% Comissão</label>
+            <input type="text" placeholder="% Comissão" disabled
+              class="bg-[#2a2a3d] text-gray-400 border border-gray-600 rounded px-3 py-2 h-40px" />
+          </div>
+
+          <!-- Tabela de Preço -->
+          <div class="flex flex-col col-span-3">
+            <label class="text-sm text-white mb-1">Tabela de Preço</label>
+            <select class="bg-[#2a2a3d] text-white border border-gray-600 rounded px-3 py-2 h-40px">
+              <option selected>Tabela de Venda</option>
+              <option value="tp">Tabela Promocional </option>
+              <option value="ta">Tabela Atacado </option>
+              <option value="tv">Tabela Varejo </option>
+              <option value="tr">Tabela Regional </option>
+              <option value="tc">Tabela por Cliente </option>
+              <option value="tc">Tabela por Cliente </option>
+              <option value="tc">Tabela de Custo </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container sem restrição -->
+<div class="w-full">
+  <hr class="w-full border-t border-gray-600 my-6" />
+</div>
+
+  <div class="space-y-8">
+  <!-- Endereço(s) -->
+  <div>
+    <h2 class="text-white text-lg font-semibold mb-4">Endereço(s)</h2>
+    <table class="w-full table-auto text-white">
+      <thead class="bg-[#1f2937]">
+        <tr>
+          <th class="px-4 py-2 text-left">CEP</th>
+          <th class="px-4 py-2 text-left">Logradouro</th>
+          <th class="px-4 py-2 text-left">Número</th>
+          <th class="px-4 py-2 text-left">Bairro</th>
+          <th class="px-4 py-2 text-left">Cidade</th>
+          <th class="px-4 py-2 text-left">UF</th>
+          <th class="px-4 py-2 text-left">Ações</th>
+        </tr>
+      </thead>
+      <tbody class="bg-[#2a2a3d]">
+        <tr>
+          <td class="px-4 py-2">86707-270</td>
+          <td class="px-4 py-2">Rua Cione Branco</td>
+          <td class="px-4 py-2">77</td>
+          <td class="px-4 py-2">—</td>
+          <td class="px-4 py-2">ARAPONGAS</td>
+          <td class="px-4 py-2">PR</td>
+          <td class="px-4 py-2 space-x-2">
+            <button class="bg-red-600 text-white px-3 py-1 rounded">Excluir</button>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Contato(s) -->
+  <div>
+    <h2 class="text-white text-lg font-semibold mb-4">Contato(s)</h2>
+    <table class="w-full table-auto text-white">
+      <thead class="bg-[#1f2937]">
+        <tr>
+          <th class="px-4 py-2 text-left">Contato</th>
+          <th class="px-4 py-2 text-left">Telefone</th>
+          <th class="px-4 py-2 text-left">Celular</th>
+          <th class="px-4 py-2 text-left">Email</th>
+          <th class="px-4 py-2 text-left">Ações</th>
+        </tr>
+      </thead>
+      <tbody class="bg-[#2a2a3d]">
+        <tr>
+          <td class="px-4 py-2">Matheus E Sousa Ort</td>
+          <td class="px-4 py-2">(43)99627-8756</td>
+          <td class="px-4 py-2">—</td>
+          <td class="px-4 py-2">—</td>
+          <td class="px-4 py-2 space-x-2">
+            <button class="bg-red-600 text-white px-3 py-1 rounded">Excluir</button>
+            <button class="bg-blue-600 text-white px-3 py-1 rounded">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Botões finais -->
+  <div class="flex space-x-4">
+    <button class="bg-blue-600 text-white px-4 py-2 rounded">Salvar</button>
+    <button class="bg-gray-500 text-white px-4 py-2 rounded">Cancelar</button>
+    <button class="bg-red-600 text-white px-4 py-2 rounded">Excluir</button>
+  </div>
+</div>
+
+</body>
+
+</html>

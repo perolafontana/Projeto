@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciamento de Clientes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1e1e2f] text-white font-sans">
+
+  <!-- Top bar -->
+  <header class="flex justify-between items-center px-6 py-4 bg-[#2a2a3d] border-b border-gray-700 shadow">
+    <div class="flex items-center space-x-4">
+      <button class="text-white focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hover:text-gray-300 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <h1 class="text-xl font-bold tracking-wide">UseCloud</h1>
+    </div>
+    <div class="flex items-center space-x-2">
+      <span class="text-sm font-medium">Olá Paulo F.</span>
+      <span class="text-xs bg-blue-600 px-2 py-1 rounded-full">Desenvolvedor</span>
+    </div>
+  </header>
+
+  <!-- Page title -->
+
+    <div style="display: flex; align-items: center;">
+       <img src="../src/2815973.jpg" alt="Descrição" style="width: 30px; height: auto; margin-right: 16px;">
+       <p class="font-bold text-white text-xl">Gerenciamento de Clientes</p>
+    </div>
+
+  <!-- Search and Add -->
+  <section class="px-6 flex items-center justify-between mb-6">
+    <div class="flex items-center space-x-4 w-3/4">
+      <input type="text" id="search" placeholder="🔍 Nome Fantasia" class="bg-[#2a2a3d] text-white border border-gray-600 rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400" />
+      <select id="typeFilter" class="bg-[#2a2a3d] text-white border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">Todos os tipos</option>
+        <option value="Comunicação">Comunicação</option>
+        <option value="Software">Software</option>
+        <option value="Serviços">Serviços</option>
+        <option value="Comércio">Comércio</option>
+      </select>
+    </div>
+    <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-xl font-bold shadow">+</button>
+  </section>
+
+  <!-- Table -->
+  <section class="px-6">
+    <div class="overflow-hidden rounded-lg shadow border border-gray-700">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-[#3a3a4d] text-sm uppercase text-gray-300">
+            <th class="px-4 py-3 border-b border-gray-600">Código</th>
+            <th class="px-4 py-3 border-b border-gray-600">Nome Fantasia</th>
+            <th class="px-4 py-3 border-b border-gray-600">Tipo de Fantasia</th>
+            <th class="px-4 py-3 border-b border-gray-600">CNPJ/CPF</th>
+            <th class="px-4 py-3 border-b border-gray-600">E-mail</th>
+            <th class="px-4 py-3 border-b border-gray-600">Telefone</th>
+            <th class="px-4 py-3 border-b border-gray-600">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="clientTable" class="text-sm divide-y divide-gray-700">
+          <tr class="hover:bg-[#2f2f44] transition">
+            <td class="px-4 py-3">1</td>
+            <td class="px-4 py-3">GLOBO COMUNICAÇÃO E PARTICIPAÇÕES SA</td>
+            <td class="px-4 py-3">Comunicação</td>
+            <td class="px-4 py-3">27885570000102</td>
+            <td class="px-4 py-3 text-gray-400 italic">—</td>
+            <td class="px-4 py-3 text-gray-400 italic">—</td>
+            <td class="px-4 py-3">
+              <a href="representante.html?id=1">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-xs font-medium shadow">Visualizar</button>
+              </a>
+            </td>
+          </tr>
+          <tr class="hover:bg-[#2f2f44] transition">
+            <td class="px-4 py-3">2</td>
+            <td class="px-4 py-3">MARCELO DE OLIVEIRA SANTOS SOFTWARE</td>
+            <td class="px-4 py-3">Software</td>
+            <td class="px-4 py-3">12312312312</td>
+            <td class="px-4 py-3">suporte@usecloud.com.br</td>
+            <td class="px-4 py-3">16999667755</td>
+            <td class="px-4 py-3">
+              <a href="representante.html?id=2">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-xs font-medium shadow">Visualizar</button>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- JavaScript for search and filter -->
+  <script>
+    const searchInput = document.getElementById('search');
+    const typeFilter = document.getElementById('typeFilter');
+    const tableRows = document.querySelectorAll('#clientTable tr');
+
+    function filterTable() {
+      const query = searchInput.value.toLowerCase();
+      const selectedType = typeFilter.value;
+
+      tableRows.forEach(row => {
+        const name = row.children[1].textContent.toLowerCase();
+        const type = row.children[2].textContent;
+
+        const matchesName = name.includes(query);
+        const matchesType = selectedType === "" || type === selectedType;
+
+        row.style.display = matchesName && matchesType ? '' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', filterTable);
+    typeFilter.addEventListener('change', filterTable);
+  </script>
+
+</body>
+</html>
